@@ -150,3 +150,41 @@ Si deseas generar un APK para probar la aplicación en un dispositivo Android, u
 
 ```sh
 flutter build apk
+
+
+# 📷 Ejercicio 2
+Este proyecto amplía la funcionalidad de la aplicación de cámara en Flutter, permitiendo almacenar las fotos capturadas y mostrarlas en una galería dentro de la aplicación. Se ha utilizado shared_preferences para guardar las rutas de las imágenes y mantener la galería persistente.
+
+## 📌 Funcionalidades Implementadas
+📸 Captura de imágenes y almacenamiento local en el dispositivo.
+🖼️ Visualización de todas las imágenes capturadas en una galería.
+💾 Persistencia de las imágenes utilizando shared_preferences.
+🔄 Actualización automática de la galería tras tomar una foto.
+🧭 Navegación entre las pantallas de Cámara y Galería.
+📦 Dependencias Utilizadas
+Para gestionar el almacenamiento y la visualización de imágenes, se han agregado las siguientes dependencias en el archivo pubspec.yaml:
+
+yaml
+
+dependencies:
+   shared_preferences: ^2.2.2
+## Componentes Principales
+
+### 1. **Almacenamiento de Imágenes (`ImageStorage`)**
+   - Utiliza `SharedPreferences` para guardar las rutas de las imágenes capturadas.
+   - **`savePhoto`**: Guarda la ruta de una imagen en una lista persistente.
+   - **`loadPhotos`**: Recupera la lista de rutas de imágenes almacenadas.
+
+### 2. **Visualización en Galería (`GridView`)**
+   - Muestra las imágenes almacenadas en una cuadrícula.
+   - **`GridView.builder`**: Crea una cuadrícula dinámica con las imágenes cargadas.
+   - **`Image.file`**: Muestra cada imagen a partir de su ruta almacenada.
+
+### 3. **Integración con la Cámara**
+   - Las imágenes capturadas se guardan en el almacenamiento local y sus rutas se añaden a la lista de `ImageStorage`.
+   - La galería se actualiza automáticamente al cargar las rutas de las imágenes almacenadas.
+
+## Flujo de Trabajo
+1. **Captura de Imágenes**: Las fotos se guardan en el almacenamiento del dispositivo.
+2. **Almacenamiento**: Las rutas de las imágenes se guardan en `SharedPreferences`.
+3. **Visualización**: Las imágenes se cargan y muestran en una cuadrícula (`GridView`) en la pantalla de la galería.
