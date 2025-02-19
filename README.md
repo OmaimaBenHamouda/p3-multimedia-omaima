@@ -151,40 +151,90 @@ Si deseas generar un APK para probar la aplicación en un dispositivo Android, u
 ```sh
 flutter build apk
 
+---
 
 # 📷 Ejercicio 2
-Este proyecto amplía la funcionalidad de la aplicación de cámara en Flutter, permitiendo almacenar las fotos capturadas y mostrarlas en una galería dentro de la aplicación. Se ha utilizado shared_preferences para guardar las rutas de las imágenes y mantener la galería persistente.
+
+Este proyecto amplía la funcionalidad de la aplicación de cámara en Flutter, permitiendo almacenar las fotos capturadas y mostrarlas en una galería dentro de la aplicación. Se ha utilizado `shared_preferences` para guardar las rutas de las imágenes y mantener la galería persistente.
+
+---
 
 ## 📌 Funcionalidades Implementadas
-📸 Captura de imágenes y almacenamiento local en el dispositivo.
-🖼️ Visualización de todas las imágenes capturadas en una galería.
-💾 Persistencia de las imágenes utilizando shared_preferences.
-🔄 Actualización automática de la galería tras tomar una foto.
-🧭 Navegación entre las pantallas de Cámara y Galería.
-📦 Dependencias Utilizadas
-Para gestionar el almacenamiento y la visualización de imágenes, se han agregado las siguientes dependencias en el archivo pubspec.yaml:
+
+- 📸 Captura de imágenes y almacenamiento local en el dispositivo.
+- 🖼️ Visualización de todas las imágenes capturadas en una galería.
+- 💾 Persistencia de las imágenes utilizando `shared_preferences`.
+- 🔄 Actualización automática de la galería tras tomar una foto.
+- 🧭 Navegación entre las pantallas de Cámara y Galería.
+
+---
+
+## 📦 Dependencias Utilizadas
+
+Para gestionar el almacenamiento y la visualización de imágenes, se han agregado las siguientes dependencias en el archivo `pubspec.yaml`:
+
+```yaml
+dependencies:
+  shared_preferences: ^2.2.2
+
+
+# 🎵 **Ejercicio 3: Reproducción de Audio en Flutter**  
+
+Este ejercicio amplía la funcionalidad de la aplicación multimedia en Flutter, permitiendo la reproducción de audio con controles básicos como **play, pause y barra de progreso**. Se ha utilizado el paquete `audioplayers` para gestionar el audio y se ha integrado con la barra de navegación inferior para cambiar entre las pantallas de **Cámara, Galería e Audio**.  
+
+---
+
+## 📌 **Funcionalidades Implementadas**
+- ▶️ **Reproducir y pausar** una canción almacenada en `assets`.
+- ⏩ **Controlar el progreso** de la canción con un `Slider`.
+- ⏳ **Mostrar duración y posición actual** de la pista de audio.
+- 🔊 **Ajustar el volumen** del audio (opcional).
+- 🧭 **Navegación entre pantallas** mediante la barra inferior.
+
+---
+
+## 🏗 **Componentes del Código**
+### 📂 `audio_screen.dart`
+Este archivo define la pantalla de audio y sus controles.  
+
+### 🔹 **Variables y Estados Principales**
+| **Variable**      | **Descripción**  |
+|------------------|-----------------|
+| `_audioPlayer`  | Instancia de `AudioPlayer` para gestionar el audio. |
+| `_isPlaying`    | Indica si la canción está en reproducción. |
+| `_duration`     | Duración total de la canción. |
+| `_position`     | Posición actual de la reproducción. |
+| `songTitle`     | Nombre de la canción que se está reproduciendo. |
+
+### 🔹 **Funciones Clave**
+| **Función**           | **Descripción**  |
+|----------------------|-----------------|
+| `_playPauseAudio()` | Inicia o pausa la reproducción de la canción. |
+| `_seekAudio(value)` | Permite mover la reproducción a un punto específico. |
+
+### 🔹 **Widgets en la Interfaz**
+| **Widget**          | **Descripción**  |
+|---------------------|-----------------|
+| `AppBar`           | Muestra el título "Multimedia". |
+| `Text`             | Muestra el nombre de la canción actual. |
+| `IconButton`       | Botón de **Play/Pause**. |
+| `Slider`           | Barra de progreso para moverse en la canción. |
+| `BottomNavigation` | Barra de navegación entre pantallas. |
+
+---
+
+## 📦 **Dependencias Utilizadas (`pubspec.yaml`)**
+Se ha agregado el paquete `audioplayers` para gestionar la reproducción de audio.
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  audioplayers: ^5.2.1
+Para cargar la canción desde assets, es necesario declararla en pubspec.yaml:
 
 yaml
-
-dependencies:
-   shared_preferences: ^2.2.2
-## Componentes Principales
-
-### 1. **Almacenamiento de Imágenes (`ImageStorage`)**
-   - Utiliza `SharedPreferences` para guardar las rutas de las imágenes capturadas.
-   - **`savePhoto`**: Guarda la ruta de una imagen en una lista persistente.
-   - **`loadPhotos`**: Recupera la lista de rutas de imágenes almacenadas.
-
-### 2. **Visualización en Galería (`GridView`)**
-   - Muestra las imágenes almacenadas en una cuadrícula.
-   - **`GridView.builder`**: Crea una cuadrícula dinámica con las imágenes cargadas.
-   - **`Image.file`**: Muestra cada imagen a partir de su ruta almacenada.
-
-### 3. **Integración con la Cámara**
-   - Las imágenes capturadas se guardan en el almacenamiento local y sus rutas se añaden a la lista de `ImageStorage`.
-   - La galería se actualiza automáticamente al cargar las rutas de las imágenes almacenadas.
-
-## Flujo de Trabajo
-1. **Captura de Imágenes**: Las fotos se guardan en el almacenamiento del dispositivo.
-2. **Almacenamiento**: Las rutas de las imágenes se guardan en `SharedPreferences`.
-3. **Visualización**: Las imágenes se cargan y muestran en una cuadrícula (`GridView`) en la pantalla de la galería.
+Copy
+flutter:
+  assets:
+    - assets/rosas.mp3

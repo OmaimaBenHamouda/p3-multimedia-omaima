@@ -42,7 +42,7 @@ class _ImageScreenState extends State<ImageScreen> {
           return Image.file(File(_photoPaths[index]), fit: BoxFit.cover);
         },
             ),
-      bottomNavigationBar: BottomNavigation(currentIndex: 1),
+      bottomNavigationBar: BottomNavigation(currentIndex: 1, cameras: []),
     );
   }
 }

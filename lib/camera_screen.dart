@@ -63,10 +63,18 @@ Future<void> capturePhoto() async {
   }
 
   @override
-  void dispose() {
-    _controller?.dispose();
-    super.dispose();
+ void dispose() {
+  _controller?.dispose();  // 🔹 Aseguramos que la cámara se libere
+  _controller = null;  // 🔹 Eliminamos la referencia al controlador
+  super.dispose();
+}
+@override
+void didChangeDependencies() {
+  super.didChangeDependencies();
+  if (_controller == null) {
+    initializeCamera();  // 🔹 Volver a inicializar la cámara si no está disponible
   }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +117,7 @@ Future<void> capturePhoto() async {
           ),
           if (_lastPhotoPath != null)
             Image.file(File(_lastPhotoPath!), height: 100),
-          BottomNavigation(currentIndex: 0),
+          BottomNavigation(currentIndex: 0,cameras: widget.cameras),
         ],
       ),
     );
