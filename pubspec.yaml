@@ -34,8 +34,7 @@ dependencies:
   path_provider: ^2.1.1
   shared_preferences: ^2.2.0
   audioplayers: ^5.2.1
-
-
+  file_picker: ^8.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -67,6 +66,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/rosas.mp3 
+     - assets/playa.mp3
+     - assets/amour.mp3
+     - assets/Sherine.mp3
+     - assets/Nancy.mp3
+     - assets/Heifa.mp3
+     - assets/Bouchnak.mp3
+     - assets/Jouini.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
