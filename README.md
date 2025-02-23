@@ -58,9 +58,10 @@ dependencies:
     sdk: flutter
   camera: ^0.10.5+5
   path_provider: ^2.1.2
-
+```
 
 ---  
+![Screenshot_2025-02-21-20-30-20-89_be527eb5f8f93f23d7180e260bd2860d](https://github.com/user-attachments/assets/37ec7a39-cfce-47d0-adb5-ce6e47df670c)
 
 # 🖼 Ejercicio 2: Galería de Imágenes en Flutter 
 
@@ -96,7 +97,8 @@ Para gestionar el almacenamiento y la visualización de imágenes, se ha agregad
 ```yaml
 dependencies:
   shared_preferences: ^2.2.2
-
+```
+![Screenshot_2025-02-21-20-22-31-28_be527eb5f8f93f23d7180e260bd2860d](https://github.com/user-attachments/assets/e27d6c1b-81a1-4293-8504-5d30d6fb8a70)
 
 # 🎵 Ejercicio 3: Reproducción de Audio en Flutter  
 
@@ -142,7 +144,8 @@ yaml
 flutter:
   assets:
     - assets/rosas.mp3
-
+```
+![Screenshot_2025-02-21-20-22-26-67_be527eb5f8f93f23d7180e260bd2860d](https://github.com/user-attachments/assets/50c321c1-36b5-480b-b50d-ba3dc7b720f1)
 
 
 # 🔌 APIs Utilizadas
