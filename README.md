@@ -6,35 +6,35 @@ Este proyecto es una aplicación en Flutter que permite capturar imágenes utili
 
 ## 📌 **Prompt**  
 
-Quiero una aplicación Flutter que cree tres pantallas: **Pantalla1, Pantalla2 y Pantalla3**.  
+Quiero una aplicación Flutter que cree tres pantallas: Pantalla1, Pantalla2 y Pantalla3.
+Pantalla 1 (Cámara)
+Arriba tiene una barra con el título "Cámara" en el centro.
+Debajo, se muestra la cámara en tiempo real  en la que puedo verme.
+Luego, hay un botón para tomar una foto.
+En la parte inferior, hay una barra con tres iconos representando: Cámara, Imagen y Audio.
+Al hacer clic en el icono de Cámara, me quedo en la misma pantalla.
+Al hacer clic en el icono de Imagen, se abre la Pantalla2.
+Al hacer clic en el icono de Audio, se abre la Pantalla3.
+Pantalla 2 (Imagen)
+Arriba tiene una barra con el título "Imagen" en el centro.
+En el medio, se muestra una galería de fotos.
+En la parte inferior, hay una barra con tres iconos representando: Cámara, Imagen y Audio.
+Al hacer clic en el icono de Cámara, se abre la Pantalla1.
+Al hacer clic en el icono de Imagen, me quedo en la misma pantalla.
+Al hacer clic en el icono de Audio, se abre la Pantalla3.
+Pantalla 3 (Audio)
+Arriba tiene una barra con el título "Audio" en el centro.
+En el medio, hay:
+Una lista de canciones.
+Un botón para pausar el audio.
+Una barra de ajuste de volumen o progreso.
+En la parte inferior, hay una barra con tres iconos representando: Cámara, Imagen y Audio.
+Al hacer clic en el icono de Cámara, se abre la Pantalla1.
+Al hacer clic en el icono de Imagen, se abre la Pantalla2.
+Al hacer clic en el icono de Audio, me quedo en la misma pantalla.
 
-### **Pantalla 1 (Cámara)**  
-- Arriba tiene una barra con el título **"Cámara"** en el centro.  
-- Debajo, se muestra la cámara en **tiempo real** en la que puedo verme.  
-- Luego, hay un **botón para tomar una foto**.  
-- En la parte inferior, hay una **barra con tres iconos** representando: **Cámara, Imagen y Audio**.  
-  - 📸 **Clic en Cámara** → Me quedo en la misma pantalla.  
-  - 🖼️ **Clic en Imagen** → Se abre la **Pantalla2**.  
-  - 🎵 **Clic en Audio** → Se abre la **Pantalla3**.  
+dame por separado el código para cada pantalla 
 
-### **Pantalla 2 (Imagen)**  
-- Arriba tiene una barra con el título **"Imagen"** en el centro.  
-- En el medio, se muestra una **galería de fotos**.  
-- En la parte inferior, hay una **barra con tres iconos** representando: **Cámara, Imagen y Audio**.  
-  - 📸 **Clic en Cámara** → Se abre la **Pantalla1**.  
-  - 🖼️ **Clic en Imagen** → Me quedo en la misma pantalla.  
-  - 🎵 **Clic en Audio** → Se abre la **Pantalla3**.  
-
-### **Pantalla 3 (Audio)**  
-- Arriba tiene una barra con el título **"Audio"** en el centro.  
-- En el medio, hay:  
-  - Una **lista de canciones**.  
-  - Un **botón para pausar el audio**.  
-  - Una **barra de ajuste de volumen o progreso**.  
-- En la parte inferior, hay una **barra con tres iconos** representando: **Cámara, Imagen y Audio**.  
-  - 📸 **Clic en Cámara** → Se abre la **Pantalla1**.  
-  - 🖼️ **Clic en Imagen** → Se abre la **Pantalla2**.  
-  - 🎵 **Clic en Audio** → Me quedo en la misma pantalla.  
 
 ---
 
@@ -98,7 +98,8 @@ Para gestionar el almacenamiento y la visualización de imágenes, se ha agregad
 dependencies:
   shared_preferences: ^2.2.2
 ```
-![Screenshot_2025-02-21-20-22-31-28_be527eb5f8f93f23d7180e260bd2860d](https://github.com/user-attachments/assets/e27d6c1b-81a1-4293-8504-5d30d6fb8a70)
+![Screenshot_2025-02-23-19-39-14-30_be527eb5f8f93f23d7180e260bd2860d](https://github.com/user-attachments/assets/d3b4306d-0e32-4d0c-96b5-b7599e55309b)
+
 
 # 🎵 Ejercicio 3: Reproducción de Audio en Flutter  
 
